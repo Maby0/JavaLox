@@ -4,6 +4,9 @@ TOOL_DIR = lox/com/craftinginterpreters/tool
 CLASS_DIR = out
 MAIN_CLASS = com.craftinginterpreters.lox.Lox
 
+# New target for GenerateAst main class
+GENERATE_AST_CLASS = com.craftinginterpreters.tool.GenerateAst
+
 # Find all .java files
 JAVA_FILES := $(shell find $(SRC_DIR) $(TOOL_DIR) -name "*.java")
 
@@ -22,6 +25,9 @@ run: compile
 lox: compile
 	java -cp $(CLASS_DIR) $(MAIN_CLASS) $(ARGS)
 
+generate_ast: compile
+	java -cp $(CLASS_DIR) $(GENERATE_AST_CLASS) $(ARGS)
+
 clean:
 	rm -rf $(CLASS_DIR)
 
@@ -30,3 +36,6 @@ clean:
 # make run
 # To compile and run with arguments:
 # make lox ARGS="your arguments here"
+
+# To generate AST classes:
+# make generate_ast ARGS="your output directory here"
