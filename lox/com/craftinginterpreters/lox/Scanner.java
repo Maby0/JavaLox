@@ -160,7 +160,7 @@ public class Scanner {
         while (isDigit(peek()))
             advance();
 
-        // Look for a fractional part.
+        // Look for a fractional part of the number e.g. 1.23
         if (peek() == '.' && isDigit(peekNext())) {
             // Consume the "."
             advance();
