@@ -25,6 +25,9 @@ run: compile
 lox: compile
 	java -cp $(CLASS_DIR) $(MAIN_CLASS) $(ARGS)
 
+debug: compile
+	java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005 -cp $(CLASS_DIR) $(MAIN_CLASS) $(ARGS)
+
 generate_ast: compile
 	java -cp $(CLASS_DIR) $(GENERATE_AST_CLASS) $(ARGS)
 

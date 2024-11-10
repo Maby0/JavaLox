@@ -30,6 +30,13 @@
             "request": "launch",
             "mainClass": "com.craftinginterpreters.tool.GenerateAst",
             "projectName": "craftingInterpretersJava_e5b2e44c"
-        }
+        },
+        {
+            "type": "java",
+            "name": "Attach to Remote Program",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005
+          }
     ]
 }
